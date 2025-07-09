@@ -68,7 +68,7 @@ const applicationResultAPI = async (email, isApproved) => {
   try {
     const response = await instance.post(
       `/api/auth/application-result`,
-      {}, 
+      {},
       {
         params: {
           email: email,
@@ -354,7 +354,7 @@ const getProductByIdAPI = async (id) => {
   try {
     const response = await instance.get(`/api/products/${id}`);
     console.log('Get product by ID success:', response.data);
-    const data = response.data?.data || response.data; 
+    const data = response.data?.data || response.data;
     return data;
   } catch (error) {
     console.error('Error getting product by ID:', error.response?.data || error.message);
@@ -430,7 +430,7 @@ const getTopDesignersByRevenueAPI = async (topN = 5) => {
 const getOrderStatusByMonthAPI = async () => {
   try {
     const response = await instance.get('/api/dashboard/orders');
-    return response.data; 
+    return response.data;
   } catch (error) {
     throw error;
   }
@@ -457,7 +457,7 @@ const getTopProductsAPI = async () => {
 const getTopProductsWithReviewsAPI = async () => {
   try {
     const response = await instance.get('/api/dashboard/top-products-reviews');
-    
+
     if (Array.isArray(response.data?.data)) {
       return response.data.data;
     }
@@ -513,9 +513,20 @@ const getTotalReviewsAPI = async () => {
   }
 };
 
+const updateOrderStatusAPI = async (orderId, status) => {
+  try {
+    const response = await instance.get(`/api/orders/${orderId}/${status}`);
+    console.log('Order status updated:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error updating order status:', error.response?.data || error.message);
+    throw error;
+  }
+};
 
 
 export {
+  updateOrderStatusAPI,
   getTotalReviewsAPI,
   getAllConversationsAPI,
   getConversationByIdAPI,
