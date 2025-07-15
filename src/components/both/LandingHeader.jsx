@@ -244,7 +244,7 @@ const LandingHeader = () => {
         open={openDialog}
         onClose={handleCloseDialog}
         fullWidth
-        maxWidth= 'xs'
+        maxWidth='xs'
         PaperProps={{
           sx: {
             backgroundColor: '#3F5139',
@@ -267,9 +267,9 @@ const LandingHeader = () => {
         </DialogContent>
 
         <DialogActions sx={{ justifyContent: 'center', gap: 2, mt: 2 }}>
-        <Button
+          <Button
             variant="outlined"
-            href="https://drive.google.com/file/d/1dUQp2CHMViSG7YrO1hRtdlrWa0TyciSP/view?usp=sharing" 
+            href="https://drive.google.com/drive/folders/1qoOj_YxGilVal9eEchxlTsqp8RMyW4Jd?usp=sharing"
             target="_blank"
             sx={{
               borderColor: 'white',
